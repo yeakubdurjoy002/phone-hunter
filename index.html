@@ -1,0 +1,68 @@
+<!DOCTYPE html>
+<html lang="en" data-theme="light">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Phone Hunter</title>
+    <!-- DaisyUi Linking -->
+    <link
+      href="https://cdn.jsdelivr.net/npm/daisyui@4.12.10/dist/full.min.css"
+      rel="stylesheet"
+      type="text/css"
+    />
+    <!-- Tailwind CSS Linking -->
+    <script src="https://cdn.tailwindcss.com"></script>
+    <!-- External CSS Linking -->
+    <link rel="stylesheet" href="styles/style.css" />
+  </head>
+  <body class="poppins-semibold">
+    <header>
+      <div class="navbar bg-base-100 flex justify-between">
+        <div class="">
+          <a class="btn btn-ghost text-[#403F3F] text-xl">Hot Gadgets</a>
+        </div>
+        <div class="flex-none">
+          <button class="btn bg-[#0D6EFD] text-white w-28">Sign Up</button>
+        </div>
+      </div>
+    </header>
+    <main>
+      <section class="container">
+        <p class="items-center text-center text-4xl m-10 poppins-bold-italic">
+          Search Your Phone
+        </p>
+
+        <section class="items-center flex justify-center">
+          <input
+            id="search-field"
+            type="text"
+            placeholder="Search..."
+            class="input input-bordered w-full max-w-xs bg-[#100F0F0D] border-none"
+          />
+          <button ondblclick="handleSearch()" class="btn bg-[#0D6EFD] w-40">
+            Search
+          </button>
+        </section>
+        <!-- Search Results -->
+        <section>
+          <div id="loading-spinner" class="text-center mt-10 hidden">
+            <span
+              class="loading loading-spinner text-secondary loading-lg"
+            ></span>
+          </div>
+          <div
+            id="phones-container"
+            class="grid gap-4 grid-cols-1 md:grid-cols-2 lg:grid-cols-3"
+          ></div>
+          <div id="load-more" class="hidden m-10 text-center">
+            <button ondblclick="" class="btn bg-[#0D6EFD] w-40">
+              Load More
+            </button>
+          </div>
+        </section>
+      </section>
+    </main>
+    <footer></footer>
+    <script src="JS/phone-hunting.js"></script>
+  </body>
+</html>
