@@ -38,9 +38,9 @@ const displayPhones = (phones) => {
             </figure>
             <div class="card-body">
               <h2 class="card-title">${phone.phone_name}</h2>
-              <p>${phone.slug}</p>
-              <div class="card-actions justify-end">
-                <button class="btn btn-primary">Buy Now</button>
+              
+              <div class="card-actions justify-center">
+                <button onclick="showDetailsButton('${phone.slug}');my_modal_5.showModal()"  class="btn btn-primary">Show Details</button>
               </div>
             </div>
     `;
@@ -58,7 +58,23 @@ const displayPhones = (phones) => {
   // Hide the loading spinner
   loadingToggleSpinner(false);
 };
-
+// implement showDetailsButton
+const showDetailsButton = async (id) => {
+  const res = await fetch(
+    `https://openapi.programming-hero.com/api/phone/${id}`
+  );
+  const data = await res.json();
+  // console.log(data);
+  const phone = data.data;
+  showPhoneDetails(phone);
+};
+const showPhoneDetails = (phone) => {
+  console.log(phone);
+  const phoneName = document.getElementById("show-phone-detail-name");
+  phoneName.innerText = phone.name;
+  // show the modal
+  my_modal_5.showModal();
+};
 // Handle search button click
 const handleSearch = () => {
   const searchField = document.getElementById("search-field");
