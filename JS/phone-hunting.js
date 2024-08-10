@@ -66,3 +66,4 @@ const loadingToggleSpinner = (isLoading) => {
     loadingSpinner.classList.add("hidden");
   }
 };
+const handleLoadMore = () => {};
